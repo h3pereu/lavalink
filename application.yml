@@ -1,0 +1,65 @@
+server:
+  port: 2333
+  address: 0.0.0.0
+
+lavalink:
+  server:
+    password: "youshallnotpass"
+    sources:
+      youtube: false        # zakáže vestavěný YT
+      bandcamp: false
+      soundcloud: false
+      twitch: false
+      vimeo: false
+      http: false
+      local: false
+
+plugins:
+  youtube:
+    enabled: true
+    allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
+    clients:
+      - MUSIC
+      - WEB
+      - WEBEMBEDDED
+      - ANDROID_VR
+    oauth:
+      enabled: true
+      refreshToken: "1//03009IAmdvAYfCgYIARAAGAMSNwF-L9Ir-3lFxyTpSS0yxACcMG4IHb86OptbDwoueDThfNuzEL5hqWpWFYk2zVdCsiovbcW8aEs"
+
+  lavasrc:
+    providers:
+      - "ytsearch:\"%ISRC%\""
+      - "ytsearch:%QUERY%"
+    sources:
+      spotify: true
+      youtube: true
+      applemusic: false
+      deezer: false
+      yandexmusic: false
+      flowerytts: false
+      vkmusic: false
+      tidal: false
+      qobuz: false
+      ytdlp: false
+    lyrics-sources:
+      spotify: false
+      deezer: false
+      youtube: false
+      yandexmusic: false
+      vkmusic: false
+    spotify:
+      clientId: "08e46a5017d94839877a86bf6ab38930"
+      clientSecret: "765db32ea2204fc69f2a1d4baddfbb70"
+      countryCode: "US"
+      playlistLoadLimit: 6
+      albumLoadLimit: 6
+      resolveArtistsInSearch: true
+      localFiles: false
+      preferAnonymousToken: true
+
+logging:
+  level:
+    dev.lavalink.youtube.http.YoutubeOauth2Handler: INFO
